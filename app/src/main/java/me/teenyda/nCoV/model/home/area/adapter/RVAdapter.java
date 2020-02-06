@@ -1,4 +1,4 @@
-package me.teenyda.nCoV.model.home.base.adapter;
+package me.teenyda.nCoV.model.home.area.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

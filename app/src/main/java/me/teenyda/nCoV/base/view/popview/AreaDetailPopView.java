@@ -14,7 +14,7 @@ import android.widget.PopupWindow;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import me.teenyda.nCoV.R;
-import me.teenyda.nCoV.model.home.base.adapter.RVAdapter;
+import me.teenyda.nCoV.model.home.area.adapter.RVAdapter;
 
 public class AreaDetailPopView {
 

@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="me.teenyda.nCoV.model.home.test.TestAct" />
+        <activity android:name=".model.home.area.AreaAct" />
     </application>
 
 </manifest>

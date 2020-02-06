@@ -18,9 +18,8 @@ import me.teenyda.nCoV.base.map.CnMap;
 import me.teenyda.nCoV.base.map.CnMapConfig;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
 import me.teenyda.nCoV.base.tools.Provinces;
-import me.teenyda.nCoV.base.view.popview.AreaDetailPopView;
+import me.teenyda.nCoV.model.home.area.AreaAct;
 import me.teenyda.nCoV.model.home.base.adapter.ImageNetAdapter;
-import me.teenyda.nCoV.model.home.base.adapter.RVAdapter;
 import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 import me.teenyda.nCoV.model.home.base.presenter.HomePresenter;
 import me.teenyda.nCoV.model.home.base.view.IHomeView;
@@ -31,9 +30,6 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
 
     private ChinaMapInfoView imgMap;
 
-    private RecyclerView rv;
-
-    private AreaDetailPopView mPopView;
 
     @Override
     protected HomePresenter initPresenter() {
@@ -54,19 +50,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
     protected void initView() {
 //        setTitle("首页");
 
-        rv = (RecyclerView) $(R.id.home_rv);
-        LinearLayoutManager manager = new LinearLayoutManager(getMContext());
-        rv.setLayoutManager(manager);
-        RVAdapter rvAdapter = new RVAdapter(getMContext());
-        rv.setAdapter(rvAdapter);
-        mPopView = new AreaDetailPopView(getMContext());
 
-        rvAdapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPopView.show(v);
-            }
-        });
 
         //创建（new banner()）或者布局文件中获取banner
         Banner banner = (Banner) $(R.id.banner);
@@ -83,6 +67,13 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
             CnMapConfig cnMapConfig = configMap.get(cnMap.PROVINCE[i]);
             cnMapConfig.setText(Provinces.chineseProvince[i]);
         }
+
+        $(R.id.rl_toArea).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(AreaAct.class);
+            }
+        });
 
 
 //        mDialog = new CommonDialog.Builder()
