@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6a6afc</color>
+    <color name="colorPrimaryDark">#4545ff</color>
+    <color name="colorAccent">#996699</color>
+
+    <color name="main_bg">#9999CC</color>
+
+    <!--半透明-->
+    <color name="c_translucent">#70000000</color>
+    <color name="c_transl_fff">#70ffffff</color>
+
+    <!--文字颜色-->
+    <color name="c_2c2c2c">#2c2c2c</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_bfbfbf">#bfbfbf</color>
+    <color name="c_5866fa">#5866fa</color>
+    <color name="c_eeeeee">#eeeeee</color>
+    <color name="c_f2f2f2">#f2f2f2</color>
+    <color name="c_f74c31">#f74c31</color>
+    <color name="c_f78207">#F78207</color>
+    <color name="c_a25a4e">#A25A4E</color>
+    <color name="c_5d7092">#5D7092</color>
+    <color name="c_28b7a3">#28B7A3</color>
+
+    <!--渐变-->
+    <color name="c_cbeba1">#cbeba1</color>
+    <color name="c_c6ebf2">#c6ebf2</color>
+
+    <color name="c_88eeff">#88eeff</color>
+    <color name="c_99aaff">#99aaff</color>
+
+    <color name="c_dac9a6">#dac9a6</color>
+    <color name="c_fb9966">#fb9966</color>
+
+
+
+
+    <!-- 分割线 -->
+    <!--<color name="c_eeeeee">#eeeeee</color>-->
+</resources>
