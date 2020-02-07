@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,7 +19,7 @@ import me.teenyda.nCoV.base.mvp.ApplicationManager;
 import me.teenyda.nCoV.model.home.base.HomeFrag;
 import me.teenyda.nCoV.model.message.MessageFrag;
 import me.teenyda.nCoV.model.my.MyFrag;
-import me.teenyda.nCoV.model.manager.ManagerFrag;
+import me.teenyda.nCoV.model.news.ManagerFrag;
 
 public class MainActivity extends AppCompatActivity{
 

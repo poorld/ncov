@@ -1,4 +1,4 @@
-package me.teenyda.nCoV.model.manager.view;
+package me.teenyda.nCoV.model.news.view;
 
 import me.teenyda.nCoV.base.mvp.BaseView;
 

@@ -51,7 +51,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
 //        setTitle("首页");
 
 
-
+        // 幻灯片
         //创建（new banner()）或者布局文件中获取banner
         Banner banner = (Banner) $(R.id.banner);
         //默认直接设置adapter就行了
@@ -60,12 +60,30 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
         //地图
         imgMap = (ChinaMapInfoView) $(R.id.imgCnMap);
         imgMap.setChinaMapViewProvinceListener(this);
-
         CnMap cnMap = imgMap.getCnMap();
         HashMap<String, CnMapConfig> configMap = cnMap.configMap;
         for (int i = 0; i < configMap.size(); i++) {
             CnMapConfig cnMapConfig = configMap.get(cnMap.PROVINCE[i]);
             cnMapConfig.setText(Provinces.chineseProvince[i]);
+            cnMapConfig.setTextColor(getResources().getColor(R.color.c_2c2c2c));
+            int num = i % 5;
+            switch (num) {
+                case 0:
+                    cnMapConfig.setFillColor(getResources().getColor(R.color.c_fceed3));
+                    break;
+                case 1:
+                    cnMapConfig.setFillColor(getResources().getColor(R.color.c_f1a88b));
+                    break;
+                case 2:
+                    cnMapConfig.setFillColor(getResources().getColor(R.color.c_e16553));
+                    break;
+                case 3:
+                    cnMapConfig.setFillColor(getResources().getColor(R.color.c_c93830));
+                    break;
+                case 4:
+                    cnMapConfig.setFillColor(getResources().getColor(R.color.c_771e1b));
+                    break;
+            }
         }
 
         $(R.id.rl_toArea).setOnClickListener(new View.OnClickListener() {

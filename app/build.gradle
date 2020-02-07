@@ -25,10 +25,10 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/layout/home',
-                    'src/main/res/layout/manager',
-                    'src/main/res/layout/message',
+                    'src/main/res/layout/news',
+                    'src/main/res/layout/query',
                     'src/main/res/layout/my',
-                    'src/main/res/layout/common',
+                    'src/main/res/layout/help',
                     'src/main/res/layout/popview',
                     'src/main/res'
             ]
@@ -63,6 +63,7 @@ svg {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:28.0.0'
     implementation 'androidx.recyclerview:recyclerview:+'
     implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -103,9 +104,14 @@ dependencies {
     implementation 'com.github.megatronking:svg-support:1.3.2'
 
     /**
-     * 毛玻璃效果
+     * 毛玻璃效果(没效果)
      */
 //    implementation 'jp.wasabeef:blurry:2.1.0'
+
+    /**
+     * TabLayout
+     */
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 
 
     testImplementation 'junit:junit:4.12'

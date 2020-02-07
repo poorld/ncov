@@ -9,6 +9,7 @@
     <!--半透明-->
     <color name="c_translucent">#70000000</color>
     <color name="c_transl_fff">#70ffffff</color>
+    <color name="c_transl_9bf">#9bffffff</color>
 
     <!--文字颜色-->
     <color name="c_2c2c2c">#2c2c2c</color>
@@ -33,6 +34,11 @@
     <color name="c_dac9a6">#dac9a6</color>
     <color name="c_fb9966">#fb9966</color>
 
+    <color name="c_fceed3">#fceed3</color>
+    <color name="c_f1a88b">#f1a88b</color>
+    <color name="c_e16553">#e16553</color>
+    <color name="c_c93830">#c93830</color>
+    <color name="c_771e1b">#771e1b</color>
 
 
 

@@ -1,12 +1,12 @@
-package me.teenyda.nCoV.model.manager;
+package me.teenyda.nCoV.model.news;
 
 import android.content.Context;
 
 import me.teenyda.nCoV.R;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
-import me.teenyda.nCoV.model.manager.model.IManagerModel;
-import me.teenyda.nCoV.model.manager.presenter.ManagerPresenter;
-import me.teenyda.nCoV.model.manager.view.IManagerView;
+import me.teenyda.nCoV.model.news.model.IManagerModel;
+import me.teenyda.nCoV.model.news.presenter.ManagerPresenter;
+import me.teenyda.nCoV.model.news.view.IManagerView;
 
 public class ManagerFrag extends MvpFragment<IManagerView, IManagerModel, ManagerPresenter> implements IManagerView {
     @Override

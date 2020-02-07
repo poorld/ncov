@@ -1,4 +1,4 @@
-package me.teenyda.nCoV.model.manager.model;
+package me.teenyda.nCoV.model.news.model;
 
 public class ManagerModelImpl implements IManagerModel {
 }
