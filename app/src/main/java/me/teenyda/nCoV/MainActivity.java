@@ -17,9 +17,9 @@ import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
 import me.majiajie.pagerbottomtabstrip.listener.SimpleTabItemSelectedListener;
 import me.teenyda.nCoV.base.mvp.ApplicationManager;
 import me.teenyda.nCoV.model.home.base.HomeFrag;
-import me.teenyda.nCoV.model.message.MessageFrag;
-import me.teenyda.nCoV.model.my.MyFrag;
-import me.teenyda.nCoV.model.news.ManagerFrag;
+import me.teenyda.nCoV.model.query.QueryFragment;
+import me.teenyda.nCoV.model.help.HelpFrag;
+import me.teenyda.nCoV.model.news.base.NewsFrag;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity{
     private Fragment currentFragment;
 
     private HomeFrag mHomeFrag;
-    private ManagerFrag mManagerFrag;
-    private MessageFrag mMessageFrag;
-    private MyFrag myFrag;
+    private NewsFrag mNewsFrag;
+    private QueryFragment mQueryFragment;
+    private HelpFrag mHelpFrag;
 
     private ImageView iv_main_home;
     private ImageView iv_main_manager;
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity{
 //        main_my.setOnClickListener(this);
 
         mHomeFrag = new HomeFrag();
-        mMessageFrag = new MessageFrag();
-        mManagerFrag = new ManagerFrag();
-        myFrag = new MyFrag();
+        mQueryFragment = new QueryFragment();
+        mNewsFrag = new NewsFrag();
+        mHelpFrag = new HelpFrag();
 
 
         mFragmentManager = getSupportFragmentManager();
@@ -108,13 +108,13 @@ public class MainActivity extends AppCompatActivity{
                         switchFragment(mHomeFrag);
                         break;
                     case 1:
-                        switchFragment(mManagerFrag);
+                        switchFragment(mNewsFrag);
                         break;
                     case 2:
-                        switchFragment(mMessageFrag);
+                        switchFragment(mQueryFragment);
                         break;
                     case 3:
-                        switchFragment(myFrag);
+                        switchFragment(mHelpFrag);
                         break;
 
                 }
@@ -140,15 +140,15 @@ public class MainActivity extends AppCompatActivity{
                 switchNavigationImg(0);
                 break;
             case R.id.main_manager:
-                switchFragment(mManagerFrag);
+                switchFragment(mNewsFrag);
                 switchNavigationImg(1);
                 break;
             case R.id.main_message:
-                switchFragment(mMessageFrag);
+                switchFragment(mQueryFragment);
                 switchNavigationImg(2);
                 break;
             case R.id.main_my:
-                switchFragment(myFrag);
+                switchFragment(mHelpFrag);
                 switchNavigationImg(3);
                 break;
         }
