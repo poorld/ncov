@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/shape_radius_5dp_fff"
+    android:layout_marginTop="15dp">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_know"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/c_2c2c2c"
+            android:text="帮你排除感染症状"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="出现什么症状可能感染了新型冠状病毒？如何在家做好自我隔离？"/>
+    </LinearLayout>
+</LinearLayout>

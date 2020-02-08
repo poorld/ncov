@@ -13,8 +13,12 @@
 
     <!--文字颜色-->
     <color name="c_2c2c2c">#2c2c2c</color>
+    <color name="c_414141">#414141</color>
+    <color name="c_494949">#494949</color>
+    <color name="c_606060">#606060</color>
     <color name="c_ffffff">#ffffff</color>
     <color name="c_bfbfbf">#bfbfbf</color>
+    <color name="c_afafaf">#afafaf</color>
     <color name="c_5866fa">#5866fa</color>
     <color name="c_eeeeee">#eeeeee</color>
     <color name="c_f2f2f2">#f2f2f2</color>
@@ -34,13 +38,19 @@
     <color name="c_dac9a6">#dac9a6</color>
     <color name="c_fb9966">#fb9966</color>
 
+    <color name="c_f7a7fc">#f7a7fc</color>
+    <color name="c_8653fa">#8653fa</color>
+
+    <color name="c_4c55a6">#4c55a6</color>
+    <color name="c_fed4c7">#fed4c7</color>
+
     <color name="c_fceed3">#fceed3</color>
     <color name="c_f1a88b">#f1a88b</color>
     <color name="c_e16553">#e16553</color>
     <color name="c_c93830">#c93830</color>
     <color name="c_771e1b">#771e1b</color>
 
-
+    <color name="c_f3cadb">#f3cadb</color>
 
     <!-- 分割线 -->
     <!--<color name="c_eeeeee">#eeeeee</color>-->

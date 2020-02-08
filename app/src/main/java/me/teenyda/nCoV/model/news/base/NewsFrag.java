@@ -53,9 +53,9 @@ public class NewsFrag extends MvpFragment<INewsView, INewsModel, NewsPresenter> 
         mTabLayout = (SlidingTabLayout) $(R.id.news_stl);
 
         mFragmentList = new ArrayList<>();
-        mFragmentList.add(new ProtectFrag());
-        mFragmentList.add(new BroadcastFrag());
-        mFragmentList.add(new KnowledgeFrag());
+        mFragmentList.add(ProtectFrag.getInstance());
+        mFragmentList.add(BroadcastFrag.getInstance());
+        mFragmentList.add(KnowledgeFrag.getInstance());
 
         mAdapter = new TabFragmentPagerAdapter(getChildFragmentManager(), mFragmentList);
         mTabLayout.setViewPager(mViewPager,title,getActivity(), mFragmentList);

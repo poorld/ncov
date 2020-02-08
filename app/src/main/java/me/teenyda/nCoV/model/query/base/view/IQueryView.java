@@ -1,4 +1,4 @@
-package me.teenyda.nCoV.model.query.view;
+package me.teenyda.nCoV.model.query.base.view;
 
 import me.teenyda.nCoV.base.mvp.BaseView;
 

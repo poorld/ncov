@@ -10,7 +10,10 @@
         android:id="@+id/news_stl"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#3F9FE0"
+        android:background="@color/colorPrimaryDark"
+        app:tl_tab_space_equal="true"
+        app:tl_indicator_width="55dp"
+        app:tl_indicator_color="@color/c_f3cadb"
         tl:tl_textAllCaps="true"
         tl:tl_textBold="BOTH"
         tl:tl_textsize="14sp"/>

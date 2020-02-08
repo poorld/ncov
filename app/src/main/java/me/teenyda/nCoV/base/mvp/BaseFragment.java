@@ -34,6 +34,14 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
+    protected void setTitle(String title, int color) {
+        TextView titleTv = mView.findViewById(R.id.tv_include_title);
+        if (titleTv != null) {
+            titleTv.setText(title);
+            titleTv.setTextColor(color);
+        }
+    }
+
     protected abstract int setR_layout();
 
     protected abstract void initialize();
