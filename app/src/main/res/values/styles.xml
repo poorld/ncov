@@ -7,6 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="MyTransparent" parent="AppTheme">
+        <item name="android:windowBackground">@color/c_00000000</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
     <style name="Dialog" parent="@android:style/Theme.Dialog">
         <!--Dialog的windowFrame框为无-->
@@ -26,5 +30,13 @@
         <!--显示区域以外是否使用黑色半透明背景-->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <!--<style name="MyTransparent">
+        <item name="android:windowBackground">@color/c_00000000</item>
+        <item name="android:windowNoTitle">true</item>&lt;!&ndash; 无标题 &ndash;&gt;
+        <item name="android:windowIsTranslucent">true</item>&lt;!&ndash; 半透明,设置为false无透明效果 &ndash;&gt;
+        <item name="android:backgroundDimEnabled">false</item>&lt;!&ndash; 模糊 &ndash;&gt;
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item> &lt;!&ndash; 窗口样式Dialog &ndash;&gt;
+    </style>-->
 
 </resources>

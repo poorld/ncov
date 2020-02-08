@@ -17,9 +17,9 @@ import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
 import me.majiajie.pagerbottomtabstrip.listener.SimpleTabItemSelectedListener;
 import me.teenyda.nCoV.base.mvp.ApplicationManager;
 import me.teenyda.nCoV.model.home.base.HomeFrag;
-import me.teenyda.nCoV.model.query.QueryFragment;
 import me.teenyda.nCoV.model.help.HelpFrag;
 import me.teenyda.nCoV.model.news.base.NewsFrag;
+import me.teenyda.nCoV.model.query.base.QueryFragment;
 
 public class MainActivity extends AppCompatActivity{
 

@@ -1,6 +1,7 @@
 package me.teenyda.nCoV.model.query.base;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import me.teenyda.nCoV.model.query.base.adapter.QueryAdapter;
 import me.teenyda.nCoV.model.query.base.model.IQueryModel;
 import me.teenyda.nCoV.model.query.base.presenter.QueryPresenter;
 import me.teenyda.nCoV.model.query.base.view.IQueryView;
+import me.teenyda.nCoV.model.query.doquery.DoQueryAct;
 
 public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPresenter> implements IQueryView {
 
@@ -40,6 +42,14 @@ public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPre
 
         QueryAdapter adapter = new QueryAdapter(getMContext());
         mRecyclerView.setAdapter(adapter);
+
+        $(R.id.bar_right_rl)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        toActivity(DoQueryAct.class);
+                    }
+                });
     }
 
     @Override

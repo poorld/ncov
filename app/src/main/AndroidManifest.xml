@@ -20,6 +20,8 @@
         </activity>
         <activity android:name="me.teenyda.nCoV.model.home.test.TestAct" />
         <activity android:name=".model.home.area.AreaAct" />
+        <activity android:name=".model.query.doquery.DoQueryAct"
+            android:theme="@style/MyTransparent"/>
     </application>
 
 </manifest>
