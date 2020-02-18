@@ -7,7 +7,8 @@
         android:id="@+id/broadcast_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp">
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="15dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

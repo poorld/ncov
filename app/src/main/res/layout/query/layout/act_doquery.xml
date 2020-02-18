@@ -27,6 +27,13 @@
             android:background="@color/c_ffffff"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="肺炎同程查询" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,13 +50,15 @@
                     android:text="日期"/>
 
                 <EditText
+                    android:id="@+id/query_et_date"
+                    android:focusable="false"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:textColor="@color/c_5866fa"
                     android:textSize="16sp"
                     android:layout_marginLeft="15dp"
                     android:paddingLeft="5dp"
-                    android:maxLength="1"
+                    android:singleLine="true"
                     android:background="@drawable/shape_edit_text"/>
             </LinearLayout>
 
@@ -69,22 +78,22 @@
                     android:text="车次"/>
 
                 <EditText
+                    android:id="@+id/query_no"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="15dp"
                     android:textColor="@color/c_5866fa"
                     android:textSize="16sp"
                     android:hint="例：k22"
                     android:paddingLeft="5dp"
-                    android:maxLength="1"
+                    android:singleLine="true"
                     android:textColorHint="@color/c_606060"
                     android:background="@drawable/shape_edit_text"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
@@ -98,17 +107,33 @@
                     android:text="地区"/>
 
                 <EditText
+                    android:id="@+id/query_arrive"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="15dp"
                     android:textColor="@color/c_5866fa"
                     android:textSize="16sp"
                     android:hint="可不填，例：四川"
                     android:paddingLeft="5dp"
-                    android:maxLength="1"
+                    android:singleLine="true"
                     android:textColorHint="@color/c_606060"
                     android:background="@drawable/shape_edit_text"/>
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_5866fa"
+                android:textSize="16sp"
+                android:layout_marginLeft="15dp"
+                android:text="类型"
+                android:layout_marginTop="15dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/doquery_rv"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,6 +151,7 @@
 
 
                 <TextView
+                    android:id="@+id/doquery_tv"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

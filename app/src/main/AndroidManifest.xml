@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:allowBackup="true">
+        android:allowBackup="true"
+        android:configChanges="mcc|mnc|orientation|keyboardHidden"
+        android:screenOrientation="portrait" >
         <activity android:name="me.teenyda.nCoV.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +23,7 @@
         <activity android:name="me.teenyda.nCoV.model.home.test.TestAct" />
         <activity android:name=".model.home.area.AreaAct" />
         <activity android:name=".model.query.doquery.DoQueryAct"
+            android:launchMode="singleInstance"
             android:theme="@style/MyTransparent"/>
     </application>
 

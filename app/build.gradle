@@ -80,6 +80,7 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:4.0.0'
     implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation 'com.orhanobut:logger:1.3'
     /**
      * PagerBottomTabStrip
      * 底部导航
@@ -113,7 +114,10 @@ dependencies {
      * TabLayout
      */
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-
+    /**
+     * 3d滚轮 时间选择器
+     */
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.3.0-alpha03'

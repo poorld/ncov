@@ -42,6 +42,18 @@ public class BroadcastAdapter extends RecyclerView.Adapter<BroadcastAdapter.View
         if (mOnClickListener != null) {
             holder.itemView.setOnClickListener(mOnClickListener);
         }
+
+        if (position == 0) {
+            holder.broadcast_top_line.setVisibility(View.INVISIBLE);
+        } else {
+            holder.broadcast_top_line.setVisibility(View.VISIBLE);
+        }
+
+        if (position == 9) {
+            holder.broadcast_bottom_line.setVisibility(View.INVISIBLE);
+        } else {
+            holder.broadcast_bottom_line.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -50,10 +62,12 @@ public class BroadcastAdapter extends RecyclerView.Adapter<BroadcastAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-
+        View broadcast_top_line;
+        View broadcast_bottom_line;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            broadcast_top_line = itemView.findViewById(R.id.broadcast_top_line);
+            broadcast_bottom_line = itemView.findViewById(R.id.broadcast_bottom_line);
 
         }
     }

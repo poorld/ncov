@@ -6,10 +6,17 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/color_background</item>
     </style>
     <style name="MyTransparent" parent="AppTheme">
         <item name="android:windowBackground">@color/c_00000000</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/RightInRightOutAnim</item>
+    </style>
+    
+    <style name="RightInRightOutAnim">
+        <item name="android:windowEnterAnimation">@anim/push_right_in</item>
+        <item name="android:windowExitAnimation">@anim/push_right_out</item>
     </style>
 
     <style name="Dialog" parent="@android:style/Theme.Dialog">
@@ -39,4 +46,9 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item> &lt;!&ndash; 窗口样式Dialog &ndash;&gt;
     </style>-->
 
+    <!-- pickerview 从底部弹出 -->
+    <style name="picker_view_slide_anim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pickerview_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/pickerview_slide_out_bottom</item>
+    </style>
 </resources>

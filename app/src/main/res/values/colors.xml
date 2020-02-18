@@ -3,6 +3,8 @@
     <color name="colorPrimary">#99aaff</color>
     <color name="colorPrimaryDark">#7c8fee</color>
     <color name="colorAccent">#996699</color>
+    <!--背景颜色-->
+    <color name="color_background">#F7F7F7</color>
 
     <color name="main_bg">#9999CC</color>
 
@@ -22,6 +24,8 @@
     <color name="c_ffffff">#ffffff</color>
     <color name="c_bfbfbf">#bfbfbf</color>
     <color name="c_afafaf">#afafaf</color>
+    <color name="c_c4c4c4">#C4C4C4</color>
+    <color name="c_adadad">#DADADA</color>
     <color name="c_5866fa">#5866fa</color>
     <color name="c_7883ff">#7883ff</color>
     <color name="c_eeeeee">#eeeeee</color>

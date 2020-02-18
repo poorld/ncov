@@ -2,14 +2,12 @@ package me.teenyda.nCoV.model.home.base;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.youth.banner.Banner;
+import com.youth.banner.indicator.CircleIndicator;
 
 import java.util.HashMap;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import me.teenyda.nCoV.R;
 import me.teenyda.nCoV.base.entity.BannerEntity;
 import me.teenyda.nCoV.base.entity.BookEntity;
@@ -30,6 +28,8 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
 
     private ChinaMapInfoView imgMap;
 
+
+    private Banner banner;
 
     @Override
     protected HomePresenter initPresenter() {
@@ -53,9 +53,12 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
 
         // 幻灯片
         //创建（new banner()）或者布局文件中获取banner
-        Banner banner = (Banner) $(R.id.banner);
+        banner = (Banner) $(R.id.banner);
         //默认直接设置adapter就行了
-        banner.setAdapter(new ImageNetAdapter(BannerEntity.getTestData3()));
+        banner.setAdapter(new ImageNetAdapter(BannerEntity.getTestData3()))
+            .setIndicator(new CircleIndicator(getMContext()))
+            .setIndicatorNormalColor(getResources().getColor(R.color.c_eeeeee))
+            .setIndicatorSelectedColor(getResources().getColor(R.color.c_f74c31));
 
         //地图
         imgMap = (ChinaMapInfoView) $(R.id.imgCnMap);
@@ -82,6 +85,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
                     break;
                 case 4:
                     cnMapConfig.setFillColor(getResources().getColor(R.color.c_771e1b));
+                    cnMapConfig.setTextColor(getResources().getColor(R.color.c_ffffff));
                     break;
             }
         }
@@ -115,6 +119,18 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
     @Override
     protected void doBuseness() {
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        banner.start();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        banner.stop();
     }
 
     @Override

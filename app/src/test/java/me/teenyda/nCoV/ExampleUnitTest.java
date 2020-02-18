@@ -1,6 +1,12 @@
 package me.teenyda.nCoV;
 
+import com.alibaba.fastjson.JSONObject;
+import com.orhanobut.logger.Logger;
+
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -12,6 +18,10 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(1, 6%5);
+        Map<String, String> map = new HashMap<>();
+        map.put("age", "1");
+        map.put("name", "tee");
+        String json = JSONObject.toJSONString(map);
+        Logger.d(json);
     }
 }

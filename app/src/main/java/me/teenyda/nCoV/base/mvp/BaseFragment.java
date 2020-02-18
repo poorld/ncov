@@ -48,6 +48,9 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initView();
 
+    /**
+     * 网络请求
+     */
     protected abstract void doBuseness();
 
 
