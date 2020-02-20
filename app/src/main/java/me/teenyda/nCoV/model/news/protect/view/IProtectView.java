@@ -1,5 +1,8 @@
 package me.teenyda.nCoV.model.news.protect.view;
 
+import java.util.List;
+
+import me.teenyda.nCoV.base.entity.RumorEntity;
 import me.teenyda.nCoV.base.mvp.BaseView;
 
 /**
@@ -8,4 +11,6 @@ import me.teenyda.nCoV.base.mvp.BaseView;
  * description:
  */
 public interface IProtectView extends BaseView {
+
+    void setRumor(List<RumorEntity> rumors);
 }

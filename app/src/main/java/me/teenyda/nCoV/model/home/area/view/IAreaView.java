@@ -1,5 +1,8 @@
 package me.teenyda.nCoV.model.home.area.view;
 
+import java.util.List;
+
+import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
 import me.teenyda.nCoV.base.mvp.BaseView;
 
 /**
@@ -8,4 +11,5 @@ import me.teenyda.nCoV.base.mvp.BaseView;
  * description:
  */
 public interface IAreaView extends BaseView {
+    void setProvinceData(List<ProvinceDataEntity> provinceList);
 }

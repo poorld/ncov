@@ -1,16 +1,21 @@
 package me.teenyda.nCoV.model.home.area;
 
 import android.content.Context;
-import android.view.View;
+import android.content.Intent;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import me.teenyda.nCoV.R;
+import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
 import me.teenyda.nCoV.base.mvp.MvpActivity;
 import me.teenyda.nCoV.base.view.popview.AreaDetailPopView;
+import me.teenyda.nCoV.model.home.area.model.IAreaModel;
 import me.teenyda.nCoV.model.home.area.presenter.AreaPresenter;
 import me.teenyda.nCoV.model.home.area.view.IAreaView;
-import me.teenyda.nCoV.model.home.area.adapter.RVAdapter;
+import me.teenyda.nCoV.model.home.area.adapter.ProvinceAdapter;
 import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 
 /**
@@ -18,12 +23,20 @@ import me.teenyda.nCoV.model.home.base.model.IHomeModel;
  * date: 2020/2/6
  * description: 各地区情况
  */
-public class AreaAct extends MvpActivity<IAreaView, IHomeModel, AreaPresenter> implements IAreaView{
+public class AreaAct extends MvpActivity<IAreaView, IAreaModel, AreaPresenter> implements IAreaView{
 
 
     private RecyclerView rv;
 
     private AreaDetailPopView mPopView;
+
+    private List<ProvinceDataEntity> mProvinceList;
+    private ProvinceAdapter provinceAdapter;
+
+    public static void startAreaAct(Context context) {
+        Intent intent = new Intent(context, AreaAct.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected AreaPresenter initPresenter() {
@@ -32,7 +45,7 @@ public class AreaAct extends MvpActivity<IAreaView, IHomeModel, AreaPresenter> i
 
     @Override
     protected void doBuseness() {
-
+        mPresenter.getProvinceData();
     }
 
     @Override
@@ -42,31 +55,34 @@ public class AreaAct extends MvpActivity<IAreaView, IHomeModel, AreaPresenter> i
 
     @Override
     protected void initialize() {
-
     }
 
     @Override
     protected void initView() {
-        setTitle("你好");
-        setBack();
-
         rv = (RecyclerView) $(R.id.home_rv);
         LinearLayoutManager manager = new LinearLayoutManager(getMContext());
         rv.setLayoutManager(manager);
-        RVAdapter rvAdapter = new RVAdapter(getMContext());
-        rv.setAdapter(rvAdapter);
-        mPopView = new AreaDetailPopView(getMContext());
+        provinceAdapter = new ProvinceAdapter(getMContext());
+        rv.setAdapter(provinceAdapter);
 
-        rvAdapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPopView.show(v);
-            }
+
+        mPopView = new AreaDetailPopView(getMContext());
+        provinceAdapter.setOnClickListener((v,province, cities) -> {
+            mPopView.setProvinceTitle(province);
+            mPopView.setData(cities);
+            mPopView.show(v);
         });
     }
 
     @Override
     public Context getMContext() {
         return this;
+    }
+
+    @Override
+    public void setProvinceData(List<ProvinceDataEntity> provinceList) {
+        mProvinceList = provinceList;
+        provinceAdapter.setData(provinceList);
+
     }
 }

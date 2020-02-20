@@ -8,7 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import me.teenyda.nCoV.R;
 import me.teenyda.nCoV.base.entity.request.QueryReq;
@@ -26,6 +28,8 @@ public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPre
 
     private RecyclerView mRecyclerView;
     private QueryAdapter adapter;
+    // 保存查询字段，打开查询页面填充进去
+    public Map<String, String> resultData = new HashMap<>();
 
 
     @Override
@@ -57,7 +61,7 @@ public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPre
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DoQueryAct.startDoQueryAct(getMContext());
+                        DoQueryAct.startDoQueryAct(getMContext(),resultData);
                     }
                 });
     }
@@ -87,6 +91,10 @@ public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPre
                 String no = data.getStringExtra("no");
                 String arrive = data.getStringExtra("arrive");
                 String type = data.getStringExtra("type");
+                resultData.put("date", date);
+                resultData.put("no", no);
+                resultData.put("arrive", arrive);
+                resultData.put("type", type);
                 QueryReq req = new QueryReq();
                 req.date = date;
                 req.no = no;

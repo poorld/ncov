@@ -10,13 +10,14 @@ import java.util.List;
 
 import me.teenyda.nCoV.base.entity.BannerEntity;
 import me.teenyda.nCoV.base.entity.ImageHolder;
+import me.teenyda.nCoV.base.entity.StatisticsEntity;
 
 /**
  * 自定义布局，网络图片
  */
-public class ImageNetAdapter extends BannerAdapter<BannerEntity,ImageHolder> {
+public class ImageNetAdapter extends BannerAdapter<StatisticsEntity.QuanguoTrendChartBean,ImageHolder> {
 
-    public ImageNetAdapter(List<BannerEntity> mDatas) {
+    public ImageNetAdapter(List<StatisticsEntity.QuanguoTrendChartBean> mDatas) {
         super(mDatas);
     }
 
@@ -31,10 +32,10 @@ public class ImageNetAdapter extends BannerAdapter<BannerEntity,ImageHolder> {
     }
 
     @Override
-    public void onBindView(ImageHolder holder, BannerEntity data, int position, int size) {
+    public void onBindView(ImageHolder holder, StatisticsEntity.QuanguoTrendChartBean data, int position, int size) {
+        Glide.with(holder.itemView).load(data.getImgUrl()).into(holder.imageView);
 
-        //glide
-        Glide.with(holder.itemView).load(data.imageUrl).into(holder.imageView);
     }
+
 
 }

@@ -69,7 +69,8 @@
                 <View
                     android:background="@drawable/shape_bule_vertical_line"
                     android:layout_height="15dp"
-                    android:layout_width="2dp"/>
+                    android:layout_width="2dp"
+                    android:visibility="gone"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
@@ -84,14 +85,14 @@
                 android:background="@color/c_ffffff"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -101,12 +102,14 @@
                     android:gravity="center_horizontal">
 
                     <TextView
+                        android:id="@+id/currentConfirmedIncr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="较昨日+123"
-                        android:textSize="12sp"/>
+                        android:textSize="11sp"/>
 
                     <TextView
+                        android:id="@+id/currentConfirmedCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
@@ -118,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/c_2c2c2c"
                         android:textSize="15sp"
-                        android:text="确诊"/>
+                        android:text="现存确诊"/>
                 </LinearLayout>
 
                 <View
@@ -134,12 +137,14 @@
                     android:gravity="center_horizontal">
 
                     <TextView
+                        android:id="@+id/suspectedIncr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="较昨日+123"
-                        android:textSize="12sp"/>
+                        android:textSize="11sp"/>
 
                     <TextView
+                        android:id="@+id/suspectedCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
@@ -151,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/c_2c2c2c"
                         android:textSize="15sp"
-                        android:text="疑似"/>
+                        android:text="现存疑似"/>
                 </LinearLayout>
 
                 <View
@@ -167,12 +172,14 @@
                     android:gravity="center_horizontal">
 
                     <TextView
+                        android:id="@+id/seriousIncr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="较昨日+123"
-                        android:textSize="12sp"/>
+                        android:textSize="11sp"/>
 
                     <TextView
+                        android:id="@+id/seriousCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
@@ -184,77 +191,122 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/c_2c2c2c"
                         android:textSize="15sp"
-                        android:text="重症"/>
+                        android:text="现存重症"/>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:background="@color/c_ffffff" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="较昨日+123"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:textColor="@color/c_5d7092"
-                        android:text="24423"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/c_5d7092"
-                        android:textSize="15sp"
-                        android:text="死亡"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:background="@color/c_ffffff" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="较昨日+123"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16sp"
-                        android:textColor="@color/c_28b7a3"
-                        android:text="24423"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/c_28b7a3"
-                        android:textSize="15sp"
-                        android:text="治愈"/>
-                </LinearLayout>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/confirmedIncr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="较昨日+123"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/confirmedCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_8653fa"
+                        android:text="24423"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/c_2c2c2c"
+                        android:textSize="15sp"
+                        android:text="累计确诊"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/c_ffffff" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/deadIncr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="较昨日+123"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/deadCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_28b7a3"
+                        android:text="24423"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/c_2c2c2c"
+                        android:textSize="15sp"
+                        android:text="累计死亡"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:background="@color/c_ffffff" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/curedIncr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="较昨日+123"
+                        android:textSize="11sp"/>
+
+                    <TextView
+                        android:id="@+id/curedCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_4c55a6"
+                        android:text="24423"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/c_2c2c2c"
+                        android:textSize="15sp"
+                        android:text="累计治疗"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -331,7 +383,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_radius_10dp_fff"
+            android:background="@drawable/shape_radius_10dp_f7f7f7"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -350,7 +402,8 @@
                 <View
                     android:background="@drawable/shape_bule_vertical_line"
                     android:layout_height="15dp"
-                    android:layout_width="2dp"/>
+                    android:layout_width="2dp"
+                    android:layout_gravity="center_vertical"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="0dp"
@@ -358,6 +411,34 @@
                     android:layout_height="wrap_content"
                     android:text="疫情地图"
                     android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/shape_radius_5dp_fff"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/confirmed"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        android:text="现存确诊"
+                        android:background="@drawable/selector_fff_7883ff"/>
+
+                    <TextView
+                        android:id="@+id/total_confirmed"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        android:text="累计确诊"
+                        android:background="@drawable/selector_fff_7883ff"/>
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/rl_toArea"
@@ -371,92 +452,6 @@
                         android:layout_centerInParent="true"/>
                 </RelativeLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="42dp"
-                android:layout_marginLeft="5dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/c_fceed3"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="1-9"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/c_f1a88b"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="10-99"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/c_e16553"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="100-499"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/c_c93830"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="500-1000"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@color/c_771e1b"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text=">1000"/>
-                </LinearLayout>
             </LinearLayout>
 
 
@@ -474,6 +469,126 @@
                 android:src="@drawable/island"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_ffffff"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="0"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_fceed3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="1 - 9"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_f1a88b"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="10 - 99"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_e16553"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="100 - 499"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_c93830"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="500 - 999"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_771e1b"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="1000 - 10000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp">
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@color/c_4f070d"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="> 10000"/>
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
 
 

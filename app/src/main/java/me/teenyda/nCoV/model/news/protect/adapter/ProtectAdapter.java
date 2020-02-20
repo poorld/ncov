@@ -4,10 +4,17 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import me.teenyda.nCoV.R;
+import me.teenyda.nCoV.base.entity.RumorEntity;
 
 /**
  * author: teenyda
@@ -20,12 +27,20 @@ public class ProtectAdapter extends RecyclerView.Adapter<ProtectAdapter.ViewHold
 
     private View.OnClickListener mOnClickListener;
 
+    private List<RumorEntity> mRumors = new ArrayList<>();
+
     public ProtectAdapter(Context context) {
         mContext = context;
     }
 
     public void setOnClickListener(View.OnClickListener onClickListener) {
         mOnClickListener = onClickListener;
+    }
+
+    public void setData(List<RumorEntity> rumorEntities) {
+        mRumors.clear();
+        mRumors.addAll(rumorEntities);
+        notifyDataSetChanged();
     }
 
 
@@ -42,19 +57,40 @@ public class ProtectAdapter extends RecyclerView.Adapter<ProtectAdapter.ViewHold
         if (mOnClickListener != null) {
             holder.itemView.setOnClickListener(mOnClickListener);
         }
+        // 0 谣言 1应该是真 2尚未定论
+        RumorEntity rumorEntity = mRumors.get(position);
+        holder.rumour_title.setText(rumorEntity.getTitle());
+        holder.protect_rumours.setText(rumorEntity.getMainSummary());
+        holder.rumour_answer.setText(rumorEntity.getBody());
+        switch (rumorEntity.getRumorType()) {
+            case 0:
+                holder.rumour_iv.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_rumours));
+                break;
+            case 1:
+                break;
+            case 2:
+                holder.rumour_iv.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_unknown));
+                break;
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mRumors.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
+        TextView rumour_title;
+        TextView protect_rumours;
+        TextView rumour_answer;
+        ImageView rumour_iv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
+            rumour_title = itemView.findViewById(R.id.rumour_title);
+            protect_rumours = itemView.findViewById(R.id.protect_rumours);
+            rumour_answer = itemView.findViewById(R.id.rumour_answer);
+            rumour_iv = itemView.findViewById(R.id.rumour_iv);
         }
     }
 }

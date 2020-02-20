@@ -46,6 +46,11 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
         mItemClickListener = itemClickListener;
     }
 
+    public void setType(int type) {
+        this.selectedIndex = type - 1;
+        notifyDataSetChanged();
+    }
+
 
     @NonNull
     @Override

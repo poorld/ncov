@@ -6,7 +6,11 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import me.teenyda.nCoV.R;
+import me.teenyda.nCoV.base.entity.RumorEntity;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
 import me.teenyda.nCoV.model.news.protect.adapter.ProtectAdapter;
 import me.teenyda.nCoV.model.news.protect.model.IProtectModel;
@@ -16,11 +20,12 @@ import me.teenyda.nCoV.model.news.protect.view.IProtectView;
 /**
  * author: teenyda
  * date: 2020/2/7
- * description:
+ * description: 辟谣与防护
  */
 public class ProtectFrag extends MvpFragment<IProtectView,IProtectModel,ProtectPresenter> implements IProtectView{
 
     private RecyclerView mRecyclerView;
+    private ProtectAdapter adapter;
 
     public static Fragment getInstance() {
         ProtectFrag frag = new ProtectFrag();
@@ -50,17 +55,22 @@ public class ProtectFrag extends MvpFragment<IProtectView,IProtectModel,ProtectP
         LinearLayoutManager manager = new LinearLayoutManager(getMContext());
         mRecyclerView.setLayoutManager(manager);
 
-        ProtectAdapter adapter = new ProtectAdapter(getMContext());
+        adapter = new ProtectAdapter(getMContext());
         mRecyclerView.setAdapter(adapter);
     }
 
     @Override
     protected void doBuseness() {
-
+        mPresenter.getProvinceData();
     }
 
     @Override
     public Context getMContext() {
         return getContext();
+    }
+
+    @Override
+    public void setRumor(List<RumorEntity> rumors) {
+        adapter.setData(rumors);
     }
 }

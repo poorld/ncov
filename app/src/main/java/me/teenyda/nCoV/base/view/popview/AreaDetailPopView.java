@@ -10,11 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import me.teenyda.nCoV.R;
-import me.teenyda.nCoV.model.home.area.adapter.RVAdapter;
+import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
+import me.teenyda.nCoV.model.home.area.adapter.CitiesAdapter;
+import me.teenyda.nCoV.model.home.area.adapter.ProvinceAdapter;
 
 public class AreaDetailPopView {
 
@@ -22,34 +28,39 @@ public class AreaDetailPopView {
     private PopupWindow mPopupWindow;
     private View mView;
     private RecyclerView mRecyclerView;
+    private CitiesAdapter mAdapter;
+    private TextView tv_pop_title;
 
     public AreaDetailPopView(Context context) {
         mContext = context;
-
         initPopView();
     }
 
 
     private void initPopView() {
         mView = LayoutInflater.from(mContext).inflate(R.layout.pop_area_detail, null, false);
+        tv_pop_title = mView.findViewById(R.id.tv_pop_title);
 
         mRecyclerView = mView.findViewById(R.id.pop_area_rv);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(new RVAdapter(mContext));
+        mAdapter = new CitiesAdapter(mContext);
+        mRecyclerView.setAdapter(mAdapter);
 
-        mPopupWindow = new PopupWindow(mView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mPopupWindow = new PopupWindow(mView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        mPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                backgroundAlpha(1f);
-            }
-        });
+        mPopupWindow.setOnDismissListener(() -> backgroundAlpha(1f));
 
     }
 
+    public void setProvinceTitle(String province) {
+        tv_pop_title.setText(province);
+    }
+
+    public void setData(List<ProvinceDataEntity.CitiesBean> cities) {
+        mAdapter.setData(cities);
+    }
 
 
     public void show(View v) {

@@ -5,6 +5,7 @@
     <color name="colorAccent">#996699</color>
     <!--背景颜色-->
     <color name="color_background">#F7F7F7</color>
+    <color name="color_eaf7f7">#EAF7F7F7</color>
 
     <color name="main_bg">#9999CC</color>
 
@@ -52,11 +53,15 @@
     <color name="c_4c55a6">#4c55a6</color>
     <color name="c_fed4c7">#fed4c7</color>
 
+    <color name="c_f6c79a">#f6c79a</color>
+    <color name="c_faefd3">#faefd3</color>
+
     <color name="c_fceed3">#fceed3</color>
     <color name="c_f1a88b">#f1a88b</color>
     <color name="c_e16553">#e16553</color>
     <color name="c_c93830">#c93830</color>
     <color name="c_771e1b">#771e1b</color>
+    <color name="c_4f070d">#4f070d</color>
 
     <color name="c_f3cadb">#f3cadb</color>
 

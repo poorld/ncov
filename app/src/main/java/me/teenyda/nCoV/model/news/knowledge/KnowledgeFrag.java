@@ -4,7 +4,11 @@ import android.content.Context;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import me.teenyda.nCoV.R;
+import me.teenyda.nCoV.base.entity.KnowledgeEntity;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
 import me.teenyda.nCoV.model.news.knowledge.adapter.KnowledgeAdapter;
 import me.teenyda.nCoV.model.news.knowledge.model.IKnowledgeModel;
@@ -15,11 +19,12 @@ import me.teenyda.nCoV.model.news.protect.adapter.ProtectAdapter;
 /**
  * author: teenyda
  * date: 2020/2/7
- * description:
+ * description: 疾病知识
  */
 public class KnowledgeFrag extends MvpFragment<IKnowledgeView,IKnowledgeModel,KnowledgePresenter> implements IKnowledgeView{
 
     private RecyclerView knowledge_rv;
+    private KnowledgeAdapter adapter;
 
     public static KnowledgeFrag getInstance() {
         KnowledgeFrag frag = new KnowledgeFrag();
@@ -47,17 +52,23 @@ public class KnowledgeFrag extends MvpFragment<IKnowledgeView,IKnowledgeModel,Kn
         LinearLayoutManager manager = new LinearLayoutManager(getMContext());
         knowledge_rv.setLayoutManager(manager);
 
-        KnowledgeAdapter adapter = new KnowledgeAdapter(getMContext());
+        adapter = new KnowledgeAdapter(getMContext());
         knowledge_rv.setAdapter(adapter);
     }
 
     @Override
     protected void doBuseness() {
-
+        mPresenter.getKnowledge();
     }
 
     @Override
     public Context getMContext() {
         return getContext();
+    }
+
+    @Override
+    public void setKnowledge(List<KnowledgeEntity> knowledgeList) {
+        knowledgeList.remove(0);
+        adapter.setData(knowledgeList);
     }
 }

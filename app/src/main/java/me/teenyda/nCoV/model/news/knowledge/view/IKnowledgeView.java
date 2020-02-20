@@ -1,5 +1,8 @@
 package me.teenyda.nCoV.model.news.knowledge.view;
 
+import java.util.List;
+
+import me.teenyda.nCoV.base.entity.KnowledgeEntity;
 import me.teenyda.nCoV.base.mvp.BaseView;
 
 /**
@@ -8,4 +11,6 @@ import me.teenyda.nCoV.base.mvp.BaseView;
  * description:
  */
 public interface IKnowledgeView extends BaseView {
+
+    void setKnowledge(List<KnowledgeEntity> knowledgeList);
 }

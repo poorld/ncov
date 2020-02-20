@@ -129,7 +129,7 @@ public class ChinaMapInfoView extends ImageView {
 
     // 每次地图设置有所更改都要调用该函数重新生成 drawable
     // Regenerate(Re-onDraw) view
-    private void resetDrawable() {
+    public void resetDrawable() {
         mCnSvgBigRenderer = new CnSvgBigRenderer(getContext(), mCnMap);
         Drawable drawable = new SVGDrawable(mCnSvgBigRenderer);
         setImageDrawable(drawable);

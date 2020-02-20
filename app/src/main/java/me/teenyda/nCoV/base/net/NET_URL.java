@@ -5,7 +5,7 @@ public class NET_URL {
     // RELEASE
     public static final String MODEL = "DEBUG";
 
-    public static final String BASE_URL = "http://192.168.43.93:9000/";
+    public static final String BASE_URL = "http://192.168.1.4:8080/";
     public static final String RELEASE_URL = "http://11.22.33.44/";
 
 
@@ -19,7 +19,39 @@ public class NET_URL {
      * 天行数据 api接口
      */
     public static final String TIANXING_APIKEY = "f9e6994ab4e90f93b1e4f22747468cf2";
-    public static final String TIANXING_URL = "http://api.tianapi.com/txapi/ncovsame/index" + TIANXING_APIKEY;
+    public static final String TIANXING_URL = "http://api.tianapi.com/txapi/ncovsame/index";
+
+    public static final String get_init_data = "init";
+    /**
+     * 所有数据
+     */
+    public static final String get_all_data = "getAllList";
+
+    /**
+     * 首页数据(患者人数，趋势图)
+     */
+    public static final String get_index_data = "getStatisticsService";
+
+    /**
+     * 省份人数
+     */
+    public static final String get_province_data = "getAreaStat";
+
+    /**
+     * 谣言
+     */
+    public static final String get_rumor_list = "getIndexRumorList";
+
+    /**
+     * 实时播报
+     */
+    public static final String get_broadcast = "getTimelineService";
+
+    /**
+     * 疾病知识
+     */
+    public static final String get_knowledge = "getWikiList";
+
 
     public static String getRequestUrl(String uri) {
         switch (MODEL) {

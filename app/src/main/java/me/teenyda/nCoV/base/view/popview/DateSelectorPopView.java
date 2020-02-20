@@ -13,7 +13,10 @@ import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
 
 
+import java.util.Calendar;
+
 import me.teenyda.nCoV.R;
+import me.teenyda.nCoV.base.tools.TimeUtils;
 
 
 public class DateSelectorPopView {
@@ -30,6 +33,10 @@ public class DateSelectorPopView {
         initPopView();
     }
 
+    public void setDate(String date) {
+        Calendar calendar = TimeUtils.getCalendar(date, TimeUtils.datePattern2);
+        timePickerView.setDate(calendar);
+    }
 
     private void initPopView() {
         timePickerView = new TimePickerBuilder(mContext,mOnTimeSelectListener)
@@ -53,8 +60,6 @@ public class DateSelectorPopView {
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
                 .isDialog(true)//是否显示为对话框样式
                 .build();
-
-
     }
 
 

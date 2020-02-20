@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.orhanobut.logger.Logger;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -189,7 +190,7 @@ public class RXNetApi {
                                 T resp = clazz.newInstance();
 
                                 String responJson = response.body().string();
-
+                                Logger.json(responJson);
                                 JSONObject jsonObject = JSON.parseObject(responJson);
 
                                 String code = jsonObject.getString(respParam.get("code"));
