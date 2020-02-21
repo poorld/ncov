@@ -33,7 +33,7 @@ public class KnowledgePresenter extends BasePresenter<IKnowledgeView, IKnowledge
     public void getKnowledge() {
         mModel.rx_getKnowledge()
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
@@ -55,12 +55,12 @@ public class KnowledgePresenter extends BasePresenter<IKnowledgeView, IKnowledge
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

@@ -32,7 +32,7 @@ public class BroadcastPresenter extends BasePresenter<IBroadcastView, IBroadcast
     public void getBroadcast() {
         mModel.rx_getBroadcast()
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
@@ -54,12 +54,12 @@ public class BroadcastPresenter extends BasePresenter<IBroadcastView, IBroadcast
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

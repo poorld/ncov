@@ -29,13 +29,13 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="@color/c_2c2c2c"
-            android:text="帮你排除感染症状"/>
+            android:text="------"/>
 
         <TextView
             android:id="@+id/knowledge_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:text="出现什么症状可能感染了新型冠状病毒？如何在家做好自我隔离？"/>
+            android:text="----------------"/>
     </LinearLayout>
 </LinearLayout>

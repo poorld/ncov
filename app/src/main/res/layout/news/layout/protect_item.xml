@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="电吹风对手和面部吹30秒能消毒？"
+                android:text="---"
                 android:textColor="@color/c_5866fa"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -35,7 +35,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/c_2c2c2c"
                 android:textSize="16sp"
-                android:text="丁香医生团队辟谣：30 秒太短，真吹半小时容易受伤"/>
+                android:text="---"/>
 
 
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/c_494949"
-                android:text="杀死新型冠状病毒至少需要 56℃，30 分钟，可用于物体表面消毒等。电吹风的温度即使能达到 56℃ 甚至更高，对着手和面部持续吹 30 分钟，也容易造成烫伤等伤害。还是好好洗手，做好清洁吧。"/>
+                android:text="---"/>
 
             <ImageView
                 android:id="@+id/rumour_iv"

@@ -14,7 +14,7 @@ import me.teenyda.nCoV.R;
 
 public abstract class BaseFragment extends Fragment {
 
-    private View mView;
+    protected View mView;
 
     @Nullable
     @Override

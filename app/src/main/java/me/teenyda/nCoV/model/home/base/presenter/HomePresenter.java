@@ -1,6 +1,5 @@
 package me.teenyda.nCoV.model.home.base.presenter;
 
-import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.orhanobut.logger.Logger;
@@ -18,6 +17,7 @@ import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
 import me.teenyda.nCoV.base.entity.StatisticsEntity;
 import me.teenyda.nCoV.base.mvp.BasePresenter;
 import me.teenyda.nCoV.base.net.BaseResponse;
+import me.teenyda.nCoV.base.view.LoadingViewAct;
 import me.teenyda.nCoV.model.home.base.model.HomeModelImpl;
 import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 import me.teenyda.nCoV.model.home.base.view.IHomeView;
@@ -31,11 +31,11 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
     public void initData() {
         mModel.rx_initData()
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
-                .map((Function<BaseResponse, Integer>) baseResponse -> {
+                .map(baseResponse -> {
                     String data = baseResponse.data;
                     Logger.json(data);
                     return Integer.valueOf(baseResponse.code);
@@ -57,7 +57,7 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
@@ -96,7 +96,7 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
@@ -134,12 +134,12 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

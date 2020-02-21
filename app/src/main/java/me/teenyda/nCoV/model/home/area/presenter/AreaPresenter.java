@@ -31,7 +31,7 @@ public class AreaPresenter extends BasePresenter<IAreaView, IAreaModel> {
     public void getProvinceData() {
         mModel.rx_getProvinceData()
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
@@ -53,12 +53,12 @@ public class AreaPresenter extends BasePresenter<IAreaView, IAreaModel> {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

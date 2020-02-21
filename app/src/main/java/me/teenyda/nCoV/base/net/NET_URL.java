@@ -3,10 +3,11 @@ package me.teenyda.nCoV.base.net;
 public class NET_URL {
 
     // RELEASE
-    public static final String MODEL = "DEBUG";
+//    public static final String MODEL = "DEBUG";
+    public static final String MODEL = "RELEASE";
 
     public static final String BASE_URL = "http://192.168.1.4:8080/";
-    public static final String RELEASE_URL = "http://11.22.33.44/";
+    public static final String RELEASE_URL = "http://47.94.234.77:9000/";
 
 
     public static final String API = "api/";

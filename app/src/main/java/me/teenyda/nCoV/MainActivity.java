@@ -25,12 +25,6 @@ import me.teenyda.nCoV.model.query.base.QueryFragment;
 
 public class MainActivity extends AppCompatActivity{
 
-
-    private RelativeLayout main_home;
-    private RelativeLayout main_manager;
-    private RelativeLayout main_message;
-    private RelativeLayout main_my;
-
     private FragmentManager mFragmentManager;
 
     private Fragment currentFragment;
@@ -40,15 +34,6 @@ public class MainActivity extends AppCompatActivity{
     private QueryFragment mQueryFragment;
     private HelpFrag mHelpFrag;
 
-    private ImageView iv_main_home;
-    private ImageView iv_main_manager;
-    private ImageView iv_main_message;
-    private ImageView iv_main_my;
-
-    private TextView tv_main_home;
-    private TextView tv_main_manager;
-    private TextView tv_main_message;
-    private TextView tv_main_my;
 
 
     @Override
@@ -58,29 +43,6 @@ public class MainActivity extends AppCompatActivity{
 
         ApplicationManager.addActivity(this);
 
-
-
-       /* main_home = findViewById(R.id.main_home);
-        main_manager = findViewById(R.id.main_manager);
-        main_message = findViewById(R.id.main_message);
-        main_my = findViewById(R.id.main_my);
-
-
-        iv_main_home = findViewById(R.id.iv_main_home);
-        iv_main_manager = findViewById(R.id.iv_main_manager);
-        iv_main_message = findViewById(R.id.iv_main_message);
-        iv_main_my = findViewById(R.id.iv_main_department);
-
-        tv_main_home = findViewById(R.id.tv_main_home);
-        tv_main_manager = findViewById(R.id.tv_main_manager);
-        tv_main_message = findViewById(R.id.tv_main_message);
-        tv_main_my = findViewById(R.id.tv_main_my);*/
-
-
-//        main_home.setOnClickListener(this);
-//        main_manager.setOnClickListener(this);
-//        main_message.setOnClickListener(this);
-//        main_my.setOnClickListener(this);
 
         mHomeFrag = new HomeFrag();
         mQueryFragment = new QueryFragment();
@@ -134,27 +96,6 @@ public class MainActivity extends AppCompatActivity{
         return normalItemView;
     }
 
-    /*@Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.main_home:
-                switchFragment(mHomeFrag);
-                switchNavigationImg(0);
-                break;
-            case R.id.main_manager:
-                switchFragment(mNewsFrag);
-                switchNavigationImg(1);
-                break;
-            case R.id.main_message:
-                switchFragment(mQueryFragment);
-                switchNavigationImg(2);
-                break;
-            case R.id.main_my:
-                switchFragment(mHelpFrag);
-                switchNavigationImg(3);
-                break;
-        }
-    }*/
 
     private void switchFragment(Fragment fragment) {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
@@ -177,49 +118,6 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
-    private void switchNavigationImg(int index) {
-        tv_main_home.setTextColor(getResources().getColor(R.color.c_bfbfbf));
-        tv_main_manager.setTextColor(getResources().getColor(R.color.c_bfbfbf));
-        tv_main_message.setTextColor(getResources().getColor(R.color.c_bfbfbf));
-        tv_main_my.setTextColor(getResources().getColor(R.color.c_bfbfbf));
-        switch (index) {
-            case 0:
-                iv_main_home.setSelected(true);
-                iv_main_manager.setSelected(false);
-                iv_main_message.setSelected(false);
-                iv_main_my.setSelected(false);
-
-                tv_main_home.setTextColor(getResources().getColor(R.color.c_ffffff));
-
-                break;
-            case 1:
-                iv_main_home.setSelected(false);
-                iv_main_manager.setSelected(true);
-                iv_main_message.setSelected(false);
-                iv_main_my.setSelected(false);
-
-                tv_main_manager.setTextColor(getResources().getColor(R.color.c_ffffff));
-
-                break;
-            case 2:
-                iv_main_home.setSelected(false);
-                iv_main_manager.setSelected(false);
-                iv_main_message.setSelected(true);
-                iv_main_my.setSelected(false);
-
-                tv_main_message.setTextColor(getResources().getColor(R.color.c_ffffff));
-
-                break;
-            case 3:
-                iv_main_home.setSelected(false);
-                iv_main_manager.setSelected(false);
-                iv_main_message.setSelected(false);
-                iv_main_my.setSelected(true);
-
-                tv_main_my.setTextColor(getResources().getColor(R.color.c_ffffff));
-                break;
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

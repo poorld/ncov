@@ -19,6 +19,12 @@ public abstract class MvpActivity<V extends BaseView, M, P extends BasePresenter
 
     protected abstract P initPresenter();
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.unbind();
+    }
+
     protected void showShort(String msg) {
         if (T != null) {
             T.setText(msg);

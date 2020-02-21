@@ -1,5 +1,6 @@
 package me.teenyda.nCoV.model.home.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.Html;
 import android.text.Spanned;
@@ -16,7 +17,6 @@ import java.util.List;
 import java.util.Set;
 
 import me.teenyda.nCoV.R;
-import me.teenyda.nCoV.base.entity.BannerEntity;
 import me.teenyda.nCoV.base.entity.BookEntity;
 import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
 import me.teenyda.nCoV.base.entity.StatisticsEntity;
@@ -25,15 +25,19 @@ import me.teenyda.nCoV.base.map.CnMap;
 import me.teenyda.nCoV.base.map.CnMapConfig;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
 import me.teenyda.nCoV.base.tools.Provinces;
+import me.teenyda.nCoV.base.tools.TimeUtils;
 import me.teenyda.nCoV.model.home.area.AreaAct;
-import me.teenyda.nCoV.model.home.base.adapter.ImageNetAdapter;
+import me.teenyda.nCoV.model.home.base.adapter.ImageTitleAdapter;
 import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 import me.teenyda.nCoV.model.home.base.presenter.HomePresenter;
 import me.teenyda.nCoV.model.home.base.view.IHomeView;
 
 public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> implements IHomeView, ChinaMapInfoView.ChinaMapViewProvinceListener {
 
-//    private CommonDialog mDialog;
+    //    private CommonDialog mDialog;
+
+    //截止时间
+    private TextView modifyTime;
 
     private ChinaMapInfoView imgMap;
 
@@ -90,6 +94,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
     @Override
     protected void initView() {
 //        setTitle("首页");
+        modifyTime = (TextView) $(R.id.modifyTime);
         currentConfirmedIncr = (TextView) $(R.id.currentConfirmedIncr);
         currentConfirmedCount = (TextView) $(R.id.currentConfirmedCount);
         suspectedIncr = (TextView) $(R.id.suspectedIncr);
@@ -186,6 +191,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
         return getContext();
     }
 
+
     @Override
     public void setBook(BookEntity book) {
         setTitle(book.getBookName());
@@ -193,6 +199,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
 
     @Override
     public void setData(StatisticsEntity statistics) {
+        modifyTime.setText("(截止至"+ TimeUtils.getTD(statistics.getModifyTime(), TimeUtils.datePattern5) + ")");
         currentConfirmedIncr.setText(fromHtml("#f74c31", statistics.getCurrentConfirmedIncr()));
         currentConfirmedCount.setText(String.valueOf(statistics.getCurrentConfirmedCount()));
 
@@ -212,7 +219,7 @@ public class HomeFrag extends MvpFragment<IHomeView, IHomeModel, HomePresenter> 
         curedCount.setText(String.valueOf(statistics.getCuredCount()));
 
         //默认直接设置adapter就行了
-        banner.setAdapter(new ImageNetAdapter(statistics.getQuanguoTrendChart()))
+        banner.setAdapter(new ImageTitleAdapter(statistics.getQuanguoTrendChart()))
                 .setIndicator(new CircleIndicator(getMContext()))
                 .setIndicatorNormalColor(getResources().getColor(R.color.c_eeeeee))
                 .setIndicatorSelectedColor(getResources().getColor(R.color.c_f74c31));

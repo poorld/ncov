@@ -23,6 +23,11 @@ public abstract class MvpFragment<V extends BaseView, M, P extends BasePresenter
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mPresenter.unbind();
+    }
 
     protected abstract P initPresenter();
 

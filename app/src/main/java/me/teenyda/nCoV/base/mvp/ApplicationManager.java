@@ -17,6 +17,10 @@ public class ApplicationManager {
         mActivities.remove(activity);
     }
 
+    public static Activity getActivity() {
+        return mActivities.get(mActivities.size() - 1);
+    }
+
     public static void finishedAll() {
         for (Activity activity : mActivities) {
             if (!activity.isFinishing()) {

@@ -28,7 +28,7 @@ public class ProtectPresenter extends BasePresenter<IProtectView, IProtectModel>
     public void getProvinceData() {
         mModel.rx_getRumorList()
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
@@ -50,12 +50,12 @@ public class ProtectPresenter extends BasePresenter<IProtectView, IProtectModel>
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

@@ -12,6 +12,7 @@ public class TimeUtils {
     public final static String datePattern2 = "yyyy-MM-dd";
     public final static String datePattern3 = "yyyy-MM-dd HH:mm:ss";
     public final static String datePattern4 = "MM-dd HH:mm";
+    public final static String datePattern5 = "yyyy-MM-dd HH:mm";
 
     /**
      * 获取年-月-日

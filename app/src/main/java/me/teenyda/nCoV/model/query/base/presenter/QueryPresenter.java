@@ -29,7 +29,7 @@ public class QueryPresenter extends BasePresenter<IQueryView, IQueryModel> {
     public void query(QueryReq req) {
         mModel.queryData(req)
                 .doOnSubscribe(disposable -> {
-
+                    showLoading();
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
@@ -53,12 +53,12 @@ public class QueryPresenter extends BasePresenter<IQueryView, IQueryModel> {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        hideLoading();
                     }
                 });
     }

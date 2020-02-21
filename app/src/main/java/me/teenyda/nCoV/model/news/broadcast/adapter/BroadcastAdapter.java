@@ -25,15 +25,19 @@ public class BroadcastAdapter extends RecyclerView.Adapter<BroadcastAdapter.View
 
     private Context mContext;
 
-    private View.OnClickListener mOnClickListener;
+    private IOnItemClick mOnClickListener;
 
     private List<BroadcastEntity> broadcastList = new ArrayList<>();
+
+    public interface IOnItemClick{
+        void onItemClick(String url);
+    }
 
     public BroadcastAdapter(Context context) {
         mContext = context;
     }
 
-    public void setOnClickListener(View.OnClickListener onClickListener) {
+    public void setOnClickListener(IOnItemClick onClickListener) {
         mOnClickListener = onClickListener;
     }
 
@@ -54,10 +58,8 @@ public class BroadcastAdapter extends RecyclerView.Adapter<BroadcastAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if (mOnClickListener != null) {
-            holder.itemView.setOnClickListener(mOnClickListener);
-        }
 
+        // 去掉上线条和下线条
         if (position == 0) {
             holder.broadcast_top_line.setVisibility(View.INVISIBLE);
         } else {
@@ -71,6 +73,12 @@ public class BroadcastAdapter extends RecyclerView.Adapter<BroadcastAdapter.View
         }
 
         BroadcastEntity broadcastEntity = broadcastList.get(position);
+
+        if (mOnClickListener != null) {
+            holder.itemView.setOnClickListener(v -> {
+                mOnClickListener.onItemClick(broadcastEntity.getSourceUrl());
+            });
+        }
         holder.bc_time_before.setText(broadcastEntity.getPubDateStr());
         holder.bc_time.setText(TimeUtils.getTD(broadcastEntity.getPubDate(), TimeUtils.datePattern4));
         holder.bc_title.setText(broadcastEntity.getTitle());

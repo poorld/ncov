@@ -13,7 +13,24 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@style/RightInRightOutAnim</item>
     </style>
-    
+
+    <style name="LoadingTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/c_00000000</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/LoadingAnim</item>
+    </style>
+    <style name="LoadingAnim">
+        <item name="android:windowEnterAnimation">@anim/pickerview_dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/pickerview_dialog_scale_out</item>
+    </style>
+
+    <!-- 启动页 -->
+    <!--    android:Theme.Holo.Light.NoActionBar直接崩溃-->
+    <style name="SplashActivityTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/ic_lunch</item>
+    </style>
+
     <style name="RightInRightOutAnim">
         <item name="android:windowEnterAnimation">@anim/push_right_in</item>
         <item name="android:windowExitAnimation">@anim/push_right_out</item>

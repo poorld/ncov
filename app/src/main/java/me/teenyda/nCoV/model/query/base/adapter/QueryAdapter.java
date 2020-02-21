@@ -26,15 +26,16 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder> 
 
     private View.OnClickListener mOnClickListener;
 
-    private List<NcovSameEntity> datas;
+    private List<NcovSameEntity> datas = new ArrayList<>();
+
 
     public QueryAdapter(Context context) {
         mContext = context;
-        datas = new ArrayList<>();
     }
 
     public void setData(List<NcovSameEntity> datas) {
-        this.datas = datas;
+        this.datas.clear();
+        this.datas.addAll(datas);
         notifyDataSetChanged();
     }
 

@@ -14,6 +14,7 @@ import me.teenyda.nCoV.model.news.broadcast.adapter.BroadcastAdapter;
 import me.teenyda.nCoV.model.news.broadcast.model.IBroadcastModel;
 import me.teenyda.nCoV.model.news.broadcast.presenter.BroadcastPresenter;
 import me.teenyda.nCoV.model.news.broadcast.view.IBroadcastView;
+import me.teenyda.nCoV.model.web.WebAct;
 
 /**
  * author: teenyda
@@ -52,7 +53,9 @@ public class BroadcastFrag extends MvpFragment<IBroadcastView,IBroadcastModel,Br
         broadcast_rv.setLayoutManager(manager);
         adapter = new BroadcastAdapter(getMContext());
         broadcast_rv.setAdapter(adapter);
-
+        adapter.setOnClickListener(url -> {
+            // WebAct.startWebAct(getMContext(), "实时播报", url);
+        });
     }
 
     @Override

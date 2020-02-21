@@ -33,7 +33,6 @@ public class RXNetApi {
 
     /**
      *
-     * @param isNewParam 是否是新加参数(true则拼接?，false拼接&)
      * http://xxx.xx?key=APIKEY false
      * http://xxx.xx true
      * @param useDefaultUrl false则直接使用url
