@@ -52,6 +52,9 @@ public class AreaDetailPopView {
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mPopupWindow.setOnDismissListener(() -> backgroundAlpha(1f));
 
+        mView.findViewById(R.id.area_detail_close)
+                .setOnClickListener( v -> dismiss());
+
     }
 
     public void setProvinceTitle(String province) {
@@ -70,7 +73,7 @@ public class AreaDetailPopView {
         // 设置PopupWindow是否能响应点击事件
         mPopupWindow.setTouchable(true);
         // 设置PopupWindow内容区域外的区域是否响应点击事件（true：响应；false：不响应）
-        mPopupWindow.setOutsideTouchable(false);
+        mPopupWindow.setOutsideTouchable(true);
 
         mPopupWindow.showAtLocation(v, Gravity.CENTER, 0 , 0);
         backgroundAlpha(0.5f);

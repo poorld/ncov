@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+<!-- android:clipChildren="false"
+让安卓（Android）子控件超出父控件的范围显示出来的全部内容
+ -->
+
+
 
     <RelativeLayout
+        android:id="@+id/area_detail_rl"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
@@ -11,6 +18,17 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/shape_radius_5dp_fff">
 
+        <!-- android:clipChildren="false"
+让安卓（Android）子控件超出父控件的范围显示出来的全部内容
+ -->
+        <ImageView
+            android:id="@+id/area_detail_close"
+            android:layout_marginTop="-13dp"
+            android:layout_marginRight="-13dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_close"/>
 
         <TextView
             android:id="@+id/tv_pop_title"

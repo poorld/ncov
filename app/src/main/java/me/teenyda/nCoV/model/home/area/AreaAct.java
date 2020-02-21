@@ -72,6 +72,8 @@ public class AreaAct extends MvpActivity<IAreaView, IAreaModel, AreaPresenter> i
             mPopView.setData(cities);
             mPopView.show(v);
         });
+
+        $(R.id.area_back).setOnClickListener(v -> finish());
     }
 
     @Override

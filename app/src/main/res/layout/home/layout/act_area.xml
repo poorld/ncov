@@ -11,6 +11,7 @@
         android:scaleType="centerCrop"/>
 
     <LinearLayout
+        android:id="@+id/area_ll"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginLeft="20dp"
@@ -80,6 +81,15 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/area_back"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/area_ll"
+        android:layout_alignRight="@id/area_ll"
+        android:src="@drawable/ic_back1" />
 
 
 </RelativeLayout>
