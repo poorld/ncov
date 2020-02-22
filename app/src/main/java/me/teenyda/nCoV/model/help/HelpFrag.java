@@ -3,6 +3,7 @@ package me.teenyda.nCoV.model.help;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.view.View;
 
 import me.teenyda.nCoV.R;
 import me.teenyda.nCoV.base.mvp.MvpFragment;
@@ -50,4 +51,5 @@ public class HelpFrag extends MvpFragment<IHelpView, IHelpModel, HelpPresenter> 
     public Context getMContext() {
         return getContext();
     }
+
 }

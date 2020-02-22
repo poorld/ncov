@@ -14,7 +14,6 @@ import me.teenyda.nCoV.model.news.knowledge.adapter.KnowledgeAdapter;
 import me.teenyda.nCoV.model.news.knowledge.model.IKnowledgeModel;
 import me.teenyda.nCoV.model.news.knowledge.presenter.KnowledgePresenter;
 import me.teenyda.nCoV.model.news.knowledge.view.IKnowledgeView;
-import me.teenyda.nCoV.model.news.protect.adapter.ProtectAdapter;
 
 /**
  * author: teenyda

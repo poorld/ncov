@@ -9,14 +9,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import me.teenyda.nCoV.base.entity.BroadcastEntity;
-import me.teenyda.nCoV.base.entity.RumorEntity;
 import me.teenyda.nCoV.base.mvp.BasePresenter;
 import me.teenyda.nCoV.model.news.broadcast.model.BroadcastModelImpl;
 import me.teenyda.nCoV.model.news.broadcast.model.IBroadcastModel;
 import me.teenyda.nCoV.model.news.broadcast.view.IBroadcastView;
-import me.teenyda.nCoV.model.news.protect.model.IProtectModel;
-import me.teenyda.nCoV.model.news.protect.model.ProtectModelImpl;
-import me.teenyda.nCoV.model.news.protect.view.IProtectView;
 
 /**
  * author: teenyda

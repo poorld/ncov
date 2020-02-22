@@ -72,4 +72,5 @@ public abstract class BaseFragment extends Fragment {
         intent.putExtras(args);
         startActivity(intent);
     }
+
 }

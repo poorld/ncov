@@ -10,14 +10,11 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import me.teenyda.nCoV.base.entity.BookEntity;
 import me.teenyda.nCoV.base.entity.ProvinceDataEntity;
 import me.teenyda.nCoV.base.entity.StatisticsEntity;
 import me.teenyda.nCoV.base.mvp.BasePresenter;
-import me.teenyda.nCoV.base.net.BaseResponse;
-import me.teenyda.nCoV.base.view.LoadingViewAct;
 import me.teenyda.nCoV.model.home.base.model.HomeModelImpl;
 import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 import me.teenyda.nCoV.model.home.base.view.IHomeView;
@@ -57,12 +54,10 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
 
                     @Override
                     public void onError(Throwable e) {
-                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
                     }
                 });
     }
@@ -96,12 +91,10 @@ public class HomePresenter extends BasePresenter<IHomeView, IHomeModel> {
 
                     @Override
                     public void onError(Throwable e) {
-                        hideLoading();
                     }
 
                     @Override
                     public void onComplete() {
-
                     }
                 });
     }

@@ -22,7 +22,6 @@ import me.teenyda.nCoV.model.query.base.presenter.QueryPresenter;
 import me.teenyda.nCoV.model.query.base.view.IQueryView;
 import me.teenyda.nCoV.model.query.doquery.DoQueryAct;
 
-import static android.app.Activity.RESULT_OK;
 
 public class QueryFragment extends MvpFragment<IQueryView, IQueryModel, QueryPresenter> implements IQueryView {
 

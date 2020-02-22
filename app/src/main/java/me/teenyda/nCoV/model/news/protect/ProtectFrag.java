@@ -1,7 +1,7 @@
 package me.teenyda.nCoV.model.news.protect;
 
 import android.content.Context;
-import android.os.Bundle;
+import android.view.View;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;

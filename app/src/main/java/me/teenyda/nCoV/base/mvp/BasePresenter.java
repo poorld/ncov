@@ -3,9 +3,10 @@ package me.teenyda.nCoV.base.mvp;
 import android.app.Activity;
 import android.content.Context;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.view.WindowManager;
 
-import me.teenyda.nCoV.base.view.LoadingViewAct;
+import me.teenyda.nCoV.base.view.popview.LoadingDialog;
 
 public class BasePresenter<V extends BaseView, M> {
 
@@ -16,7 +17,7 @@ public class BasePresenter<V extends BaseView, M> {
     private boolean overtime = false;
     private boolean loadFinished = false;
 
-    private CountDownTimer timer = new CountDownTimer(2000, 1000) {
+    private CountDownTimer timer = new CountDownTimer(1000, 500) {
         @Override
         public void onTick(long millisUntilFinished) {
             overtime = false;
@@ -28,7 +29,7 @@ public class BasePresenter<V extends BaseView, M> {
             overtime = true;
             if (loadFinished) {
                 backgroundAlpha(1f);
-                LoadingViewAct.hideLoading();
+                LoadingDialog.getDialog().dismiss();
             }
         }
     };
@@ -47,7 +48,7 @@ public class BasePresenter<V extends BaseView, M> {
 
     public void showLoading(){
         backgroundAlpha(0.5f);
-        LoadingViewAct.showLoading();
+        LoadingDialog.getNewDialog(mContext).show();
         timer.start();
     }
 
@@ -58,11 +59,11 @@ public class BasePresenter<V extends BaseView, M> {
      * 情况2：1秒内未完成加载，加载完成立刻隐藏
      * overtime = true;
      */
-    public synchronized void hideLoading() {
+    public void hideLoading() {
         loadFinished = true;
         if (overtime) {
             backgroundAlpha(1f);
-            LoadingViewAct.hideLoading();
+            LoadingDialog.getDialog().dismiss();
         }
 
     }
@@ -72,5 +73,4 @@ public class BasePresenter<V extends BaseView, M> {
         lp.alpha = bgAlpha;
         ((Activity) mContext).getWindow().setAttributes(lp);
     }
-
 }

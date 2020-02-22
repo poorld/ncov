@@ -1,14 +1,11 @@
 package me.teenyda.nCoV.model.home.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.text.Html;
 import android.text.Spanned;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.orhanobut.logger.Logger;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
 

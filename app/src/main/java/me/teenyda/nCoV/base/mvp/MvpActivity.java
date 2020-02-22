@@ -2,6 +2,8 @@ package me.teenyda.nCoV.base.mvp;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+
+import android.view.View;
 import android.widget.Toast;
 
 public abstract class MvpActivity<V extends BaseView, M, P extends BasePresenter> extends BaseActivity {
@@ -16,6 +18,7 @@ public abstract class MvpActivity<V extends BaseView, M, P extends BasePresenter
         mPresenter.attach((V) this);
         super.onCreate(savedInstanceState);
     }
+
 
     protected abstract P initPresenter();
 

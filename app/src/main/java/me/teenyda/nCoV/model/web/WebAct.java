@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.text.TextUtils;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -118,4 +119,5 @@ public class WebAct extends MvpActivity<IWebView, IWebModel, WebPresenter> imple
     public Context getMContext() {
         return this;
     }
+
 }

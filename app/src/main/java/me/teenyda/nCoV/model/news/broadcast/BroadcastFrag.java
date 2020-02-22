@@ -1,6 +1,7 @@
 package me.teenyda.nCoV.model.news.broadcast;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +15,6 @@ import me.teenyda.nCoV.model.news.broadcast.adapter.BroadcastAdapter;
 import me.teenyda.nCoV.model.news.broadcast.model.IBroadcastModel;
 import me.teenyda.nCoV.model.news.broadcast.presenter.BroadcastPresenter;
 import me.teenyda.nCoV.model.news.broadcast.view.IBroadcastView;
-import me.teenyda.nCoV.model.web.WebAct;
 
 /**
  * author: teenyda

@@ -2,6 +2,7 @@ package me.teenyda.nCoV.model.home.area;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +17,6 @@ import me.teenyda.nCoV.model.home.area.model.IAreaModel;
 import me.teenyda.nCoV.model.home.area.presenter.AreaPresenter;
 import me.teenyda.nCoV.model.home.area.view.IAreaView;
 import me.teenyda.nCoV.model.home.area.adapter.ProvinceAdapter;
-import me.teenyda.nCoV.model.home.base.model.IHomeModel;
 
 /**
  * author: teenyda
@@ -85,6 +85,5 @@ public class AreaAct extends MvpActivity<IAreaView, IAreaModel, AreaPresenter> i
     public void setProvinceData(List<ProvinceDataEntity> provinceList) {
         mProvinceList = provinceList;
         provinceAdapter.setData(provinceList);
-
     }
 }

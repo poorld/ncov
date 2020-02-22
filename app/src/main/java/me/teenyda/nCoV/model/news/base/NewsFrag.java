@@ -70,4 +70,5 @@ public class NewsFrag extends MvpFragment<INewsView, INewsModel, NewsPresenter> 
     public Context getMContext() {
         return getContext();
     }
+
 }

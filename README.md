@@ -3,6 +3,7 @@
 onCreate->onStart->onResume->onPause->onStop->onDestroy
 
 首页数据接口:
+
 http://localhost:8080/getStatisticsService
 实体类:StatisticsEntity
 

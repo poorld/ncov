@@ -57,7 +57,7 @@ public class ProtectAdapter extends RecyclerView.Adapter<ProtectAdapter.ViewHold
         if (mOnClickListener != null) {
             holder.itemView.setOnClickListener(mOnClickListener);
         }
-        // 0 谣言 1应该是真 2尚未定论
+        // 0 谣言 1真 2尚未定论
         RumorEntity rumorEntity = mRumors.get(position);
         holder.rumour_title.setText(rumorEntity.getTitle());
         holder.protect_rumours.setText(rumorEntity.getMainSummary());
@@ -67,6 +67,7 @@ public class ProtectAdapter extends RecyclerView.Adapter<ProtectAdapter.ViewHold
                 holder.rumour_iv.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_rumours));
                 break;
             case 1:
+                holder.rumour_iv.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_true));
                 break;
             case 2:
                 holder.rumour_iv.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_unknown));

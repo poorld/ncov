@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.View;
 
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity{
 
     private FragmentManager mFragmentManager;
 
-    private Fragment currentFragment;
+    private static Fragment currentFragment;
 
     private HomeFrag mHomeFrag;
     private NewsFrag mNewsFrag;
@@ -35,6 +33,12 @@ public class MainActivity extends AppCompatActivity{
     private HelpFrag mHelpFrag;
 
 
+    public static View getView() {
+        if (currentFragment != null) {
+            return currentFragment.getView();
+        }
+        return null;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,6 @@ public class MainActivity extends AppCompatActivity{
         mQueryFragment = new QueryFragment();
         mNewsFrag = new NewsFrag();
         mHelpFrag = new HelpFrag();
-
 
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction().add(R.id.main_frame, mHomeFrag).commit();
