@@ -6,6 +6,8 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.AlertDialog;
+
 import me.teenyda.nCoV.base.view.popview.LoadingDialog;
 
 public class BasePresenter<V extends BaseView, M> {
@@ -28,8 +30,7 @@ public class BasePresenter<V extends BaseView, M> {
         public void onFinish() {
             overtime = true;
             if (loadFinished) {
-                backgroundAlpha(1f);
-                LoadingDialog.getDialog().dismiss();
+                LoadingDialog.dismiss();
             }
         }
     };
@@ -47,9 +48,9 @@ public class BasePresenter<V extends BaseView, M> {
     }
 
     public void showLoading(){
-        backgroundAlpha(0.5f);
-        LoadingDialog.getNewDialog(mContext).show();
+        LoadingDialog.show(mContext);
         timer.start();
+
     }
 
     /**
@@ -62,15 +63,10 @@ public class BasePresenter<V extends BaseView, M> {
     public void hideLoading() {
         loadFinished = true;
         if (overtime) {
-            backgroundAlpha(1f);
-            LoadingDialog.getDialog().dismiss();
+            LoadingDialog.dismiss();
         }
 
     }
 
-    private void backgroundAlpha(float bgAlpha) {
-        WindowManager.LayoutParams lp = ((Activity) mContext).getWindow().getAttributes();
-        lp.alpha = bgAlpha;
-        ((Activity) mContext).getWindow().setAttributes(lp);
-    }
+
 }
