@@ -24,10 +24,13 @@ public class LoadingDialog {
         mDialog.setOnDismissListener(dialog -> backgroundAlpha(1f));
     }
 
-    public static void show(Context context) {
+    public static AlertDialog getDialog(Context context) {
+        if (mContext != null && mContext == context) {
+            return mDialog;
+        }
         mContext = context;
         getNewDialog();
-        mDialog.show();
+        return mDialog;
     }
 
     public static void dismiss() {

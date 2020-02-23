@@ -14,7 +14,7 @@ import android.widget.PopupWindow;
 import me.teenyda.nCoV.R;
 
 /**
- * show(View v) 怎么获取view都有错，或者空指针，暂时用AlertDialog{@link LoadingDialog}
+ * getDialog(View v) 怎么获取view都有错，或者空指针，暂时用AlertDialog{@link LoadingDialog}
  *
  */
 public class LoadingPopView {

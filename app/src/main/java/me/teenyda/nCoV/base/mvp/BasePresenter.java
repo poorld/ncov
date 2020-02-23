@@ -1,10 +1,7 @@
 package me.teenyda.nCoV.base.mvp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.CountDownTimer;
-import android.view.View;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -30,10 +27,11 @@ public class BasePresenter<V extends BaseView, M> {
         public void onFinish() {
             overtime = true;
             if (loadFinished) {
-                LoadingDialog.dismiss();
+                dialog.dismiss();
             }
         }
     };
+    private AlertDialog dialog;
 
     public void attach(V view) {
         this.mView = view;
@@ -48,7 +46,8 @@ public class BasePresenter<V extends BaseView, M> {
     }
 
     public void showLoading(){
-        LoadingDialog.show(mContext);
+        dialog = LoadingDialog.getDialog(mContext);
+        dialog.show();
         timer.start();
 
     }
@@ -60,10 +59,10 @@ public class BasePresenter<V extends BaseView, M> {
      * 情况2：1秒内未完成加载，加载完成立刻隐藏
      * overtime = true;
      */
-    public void hideLoading() {
+    public synchronized void hideLoading() {
         loadFinished = true;
         if (overtime) {
-            LoadingDialog.dismiss();
+            dialog.dismiss();
         }
 
     }
