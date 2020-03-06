@@ -58,7 +58,7 @@ public class Provinces {
             "青海", "陕西", "上海", "山东", "山西", "四川", "台湾", "天津",
             "新疆", "西藏", "云南", "浙江"};
 
-    public static String[] pingyinProvince = {"Anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong",
+    public static String[] pingyinProvince = {"anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong",
             "Guangxi", "Guizhou", "Hainan", "Hebei", "Heilongjiang", "Henan", "Hong Kong", "Hubei",
             "Hunan", "Jiangsu", "Jiangxi", "Jilin", "Liaoning", "Macau", "Nei Mongol", "Ningxia",
             "Qinghai", "Shaanxi", "Shanghai", "Shandong", "Shanxi", "Sichuan", "Taiwan", "Tianjin",

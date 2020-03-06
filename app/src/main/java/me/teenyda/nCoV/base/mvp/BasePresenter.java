@@ -43,6 +43,7 @@ public class BasePresenter<V extends BaseView, M> {
         mContext = null;
         timer.cancel();
         timer = null;
+//        dialog.dismiss();
     }
 
     public void showLoading(){

@@ -63,7 +63,7 @@ import java.util.HashMap;
 
 public class CnMap {
 
-    public String[] PROVINCE = {"Anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong",
+    public String[] PROVINCE = {"anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong",
             "Guangxi", "Guizhou", "Hainan", "Hebei", "Heilongjiang", "Henan", "Hong Kong", "Hubei",
             "Hunan", "Jiangsu", "Jiangxi", "Jilin", "Liaoning", "Macau", "Nei Mongol", "Ningxia",
             "Qinghai", "Shaanxi", "Shanghai", "Shandong", "Shanxi", "Sichuan", "Taiwan", "Tianjin",
